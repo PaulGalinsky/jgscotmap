@@ -267,12 +267,25 @@ function renderMap() {
   });
 }
 
+function getSearchMatches() {
+  const q = search.value.trim().toLowerCase();
+  return authorities.filter(authority => authority.name.toLowerCase().includes(q));
+}
+
 search.addEventListener('input',()=>{
   const q=search.value.trim().toLowerCase();
   document.querySelectorAll('.hotspot').forEach(el=>{
     const a=authorities.find(x=>x.id===el.dataset.id);
     el.style.opacity=!q || a.name.toLowerCase().includes(q)?'1':'.18';
   });
+});
+
+search.addEventListener('keydown', event => {
+  if (event.key !== 'Enter') return;
+  const matches = getSearchMatches();
+  if (matches.length !== 1) return;
+  event.preventDefault();
+  selectAuthority(matches[0]);
 });
 
 renderMap();
