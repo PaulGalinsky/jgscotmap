@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Interactive map of Scotland's 32 local authority areas.">
+<title>Scotland's 32 Local Authorities</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">Interactive map</p>
+    <h1>Scotland's 32 local authorities</h1>
+    <p class="intro">Select a hotspot to view information about that local authority.</p>
+  </div>
+</header>
+<main class="wrap layout">
+  <section class="map-card" aria-label="Map of Scotland showing 32 local authorities">
+    <div class="map-toolbar">
+      <div class="search-wrap">
+        <label for="authority-search">Find an area</label>
+        <input id="authority-search" type="search" placeholder="e.g. Edinburgh" autocomplete="off">
+      </div>
+      <div class="zoom-controls" role="group" aria-label="Map zoom controls">
+        <button id="zoom-in" class="zoom-btn" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+        <button id="zoom-out" class="zoom-btn" type="button" aria-label="Zoom out" title="Zoom out" disabled>-</button>
+        <button id="zoom-reset" class="zoom-btn" type="button" aria-label="Reset zoom" title="Reset zoom">Reset</button>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <svg id="scotland-map" viewBox="0 0 627.6 900" role="img" aria-labelledby="map-title map-desc">
+        <title id="map-title">Scotland's 32 local authorities</title>
+        <desc id="map-desc">A map of Scotland's 32 local authority boundaries, each of which is a clickable area.</desc>
+        <g id="hotspots"></g>
+      </svg>
+      <div id="map-tooltip" class="map-tooltip" role="tooltip" aria-hidden="true"></div>
+    </div>
+    <p class="map-note">Boundaries are ultra-generalised outlines (source: ONS Open Geography Portal) for illustrative purposes.</p>
+  </section>
+  <aside id="info-panel" class="info-card" aria-live="polite" aria-label="Selected local authority">
+    <div class="info-empty">
+      <span class="info-number">32</span>
+      <h2>Select a local authority</h2>
+      <p>Click one of the hotspots on the map to view its details.</p>
+    </div>
+  </aside>
+</main>
+<footer class="site-footer"><div class="wrap"><p>First version • Built as a static GitHub Pages project.</p></div></footer>
+<script src="js/boundaries.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
