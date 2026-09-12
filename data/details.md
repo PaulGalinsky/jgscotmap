@@ -12,7 +12,9 @@ A compact north-east local authority centred on Aberdeen.
 ## Aberdeenshire
 This is a fact about aberdeenshire
 
-This is a second fact
+This is a second fact with some **bold text** and *italic text* inside it
+
+This is a third fact, with a [link inside the text](https://pooka.co) for demonstration
 
 
 
